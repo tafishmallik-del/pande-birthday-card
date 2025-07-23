@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Birthday Card for My Pande 🐼</title>
+<style>
+  body {
+    background: #fff5f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    overflow: hidden;
+  }
+  h1, p {
+    margin: 20px;
+    font-size: 1.5em;
+  }
+  img {
+    width: 180px;
+    height: auto;
+    margin: 20px;
+    transition: transform 0.5s;
+  }
+  .heart {
+    position: absolute;
+    font-size: 2em;
+    animation: float 5s linear infinite;
+  }
+  @keyframes float {
+    0% {transform: translateY(0) scale(1); opacity: 1;}
+    100% {transform: translateY(-600px) scale(1.5); opacity: 0;}
+  }
+</style>
+</head>
+<body>
+<h1 id="message">🎂</h1>
+
+<script>
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.textContent = '💖';
+  heart.style.left = Math.random() * 100 + 'vw';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}
+
+// Random hearts before birthday message
+let heartInterval = setInterval(createHeart, 800);
+
+// Show cake before message
+setTimeout(() => {
+  document.getElementById('message').innerHTML = '<img src="https://i.imgur.com/CAkOqVu.png" alt="Cake" />';
+}, 2000);
+
+// Show birthday message
+setTimeout(() => {
+  clearInterval(heartInterval);
+  document.getElementById('message').innerHTML = 'Happy Birthday My Pande 🐼<br>Always stay happy';
+}, 5000);
+
+// Show heartfelt message
+setTimeout(() => {
+  document.getElementById('message').innerHTML = `My life my love my dream which is the reason of my happy lifeeee, you are very gorgeousss and my beautiful hottyyy🔥 you don't know how much I worry about you, maybe I have never worried so much about anyone till date because you are my life, when you get sad my heart also becomes sad, always be happy, be so happy that I have to always be happy☺️ because I have enjoyed your happiness for me I love youuuuuuuuuuu my jaaaan💞`;
+}, 9000);
+</script>
+</body>
+</html>
